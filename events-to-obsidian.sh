@@ -10,5 +10,4 @@ VAULT=~/Documents/Speicherwolke/Notes/
   echo
 } | sed -i -e '/^$/r /dev/stdin' $VAULT/Daily/"$TODAY Daily Note.md"
 
-cat "wrote events to "$VAULT/Daily/$TODAY Daily Note.md"
-
+cat "wrote events to $VAULT/Daily/$TODAY Daily Note.md"
