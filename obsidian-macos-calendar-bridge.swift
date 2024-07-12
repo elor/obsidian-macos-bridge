@@ -40,7 +40,7 @@ func listEvents() {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let cleanedTitle = regex.stringByReplacingMatches(in: x.title, options: [], range: NSRange(location: 0, length: x.title.utf16.count), withTemplate: "")
 
-        print("- \(time) \(cleanedTitle)")
+        print("\(time) \(cleanedTitle)")
     }
 }
 
