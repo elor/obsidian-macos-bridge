@@ -36,7 +36,7 @@ func listEvents() {
     for x in events {
         let time = x.startDate.fmt(f: "HHmm")
 
-        let pattern = "[^a-zA-Z0-9 _-]"
+        let pattern = "[^a-zA-Z0-9äöüßÄÖÜ _-]"
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let cleanedTitle = regex.stringByReplacingMatches(in: x.title, options: [], range: NSRange(location: 0, length: x.title.utf16.count), withTemplate: "")
 
