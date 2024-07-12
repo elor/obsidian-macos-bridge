@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -u
+
 # Get today's date in ISO format
 TODAY=$(date +"%Y-%m-%d")
 VAULT=~/Documents/Speicherwolke/Notes/
@@ -10,4 +12,4 @@ VAULT=~/Documents/Speicherwolke/Notes/
   echo
 } | sed -i -e '/^$/r /dev/stdin' $VAULT/Daily/"$TODAY Daily Note.md"
 
-cat "wrote events to $VAULT/Daily/$TODAY Daily Note.md"
+echo "wrote events to $VAULT/Daily/$TODAY Daily Note.md"
