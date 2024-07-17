@@ -6,9 +6,9 @@ var s = EKEventStore()
 let c = s.calendars(for: .event)
 let t = Date()
 let m = Calendar.current.startOfDay(for: t)
-let n = Calendar.current.date(byAdding: .day, value: -1, to: m)!
+let n = Calendar.current.date(byAdding: .day, value: 1, to: m)!
 
-let events = s.events(matching: s.predicateForEvents(withStart: n, end: m, calendars: c)).filter { !$0.isAllDay }
+let events = s.events(matching: s.predicateForEvents(withStart: m, end: n, calendars: c)).filter { !$0.isAllDay }
 
 let f = DateComponentsFormatter()
 f.allowedUnits = [.hour, .minute]
