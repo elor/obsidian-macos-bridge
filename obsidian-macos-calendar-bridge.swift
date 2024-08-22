@@ -3,7 +3,7 @@ import EventKit
 
 var d = 60.0 // min
 var s = EKEventStore()
-let c = s.calendars(for: .event)
+let c = s.calendars(for: .event).filter { $0.type == EKCalendarType.exchange }
 let t = Date()
 let m = Calendar.current.startOfDay(for: t)
 let n = Calendar.current.date(byAdding: .day, value: 1, to: m)!
